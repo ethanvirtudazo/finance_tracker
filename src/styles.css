@@ -22,6 +22,37 @@ h1 {
     height: 100%;
     overflow: auto;
     border: 1px solid #ddd;
+    display: grid;
+    grid-template-areas: 
+        "corner index-row"
+        "index-column cells";
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 30px 1fr;
+}
+
+.corner {
+    grid-area: corner;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.index-row {
+    grid-area: index-row;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.index-column {
+    grid-area: index-column;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#spreadsheet {
+    grid-area: cells;
+    border: 1px solid #ccc;
 }
 
 table {

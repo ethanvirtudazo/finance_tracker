@@ -12,3 +12,9 @@ for (let i = 0; i < 50; i++) {
         newRow.appendChild(newCell);
     }            
 }
+
+const indexColumn = document.getElementById('index-column');
+    
+
+const indexRow = document.getElementById('index-row');
+
