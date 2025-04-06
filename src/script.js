@@ -8,16 +8,16 @@ function getColumnLabel(index) {
 }
 
 const table = document.getElementById('spreadsheet');
-
-let alphabet;
     
 for (let i = 0; i < 50; i++) {
     const newRow = document.createElement('tr');
     table.appendChild(newRow)
 
     for (let j = 0; j < 50; j++) {
+
         const newCell = document.createElement('td');
         const alphabet = j > 0 ? getColumnLabel(j - 1) : '';
+
         if (i === 0 && j > 0) {            
             newCell.textContent = alphabet
         } else if (j === 0 && i === 0){
@@ -35,8 +35,9 @@ for (let i = 0; i < 50; i++) {
     }            
 }
 
-const indexColumn = document.getElementById('index-column');
-    
-
-const indexRow = document.getElementById('index-row');
-
+table.addEventListener("click" , (event) => {
+    const cell = event.target;
+    const row = cell.dataset.row
+    const col = cell.dataset.col
+    console.log(`you clicked cell ${col}${row}`);
+})
