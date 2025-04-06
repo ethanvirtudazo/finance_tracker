@@ -1,5 +1,3 @@
-// selects the table element
-
 function getColumnLabel(index) {
     let label = '';
     while (index >= 0) {
@@ -19,8 +17,8 @@ for (let i = 0; i < 50; i++) {
 
     for (let j = 0; j < 50; j++) {
         const newCell = document.createElement('td');
-        if (i === 0 && j > 0) {
-            const alphabet = getColumnLabel(j - 1)
+        const alphabet = j > 0 ? getColumnLabel(j - 1) : '';
+        if (i === 0 && j > 0) {            
             newCell.textContent = alphabet
         } else if (j === 0 && i === 0){
             newCell.textContent = "";
