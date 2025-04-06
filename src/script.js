@@ -1,3 +1,4 @@
+
 const spreadsheetData = new Map();
 
 const savedData = localStorage.getItem('spreadsheetData');
@@ -17,7 +18,6 @@ function getColumnLabel(index) {
     }
     return label;
 }
-
 
 
 const table = document.getElementById('spreadsheet');
@@ -47,7 +47,7 @@ for (let i = 0; i < 50; i++) {
             if (!spreadsheetData.has(cellID)) {
             spreadsheetData.set(cellID, '');            
             }
-            
+
             newCell.textContent = spreadsheetData.get(cellID);
         }
         newRow.appendChild(newCell);
@@ -58,7 +58,7 @@ table.addEventListener("click" , (event) => {
     const cell = event.target;
     const row = cell.dataset.row
     const col = cell.dataset.col    
-    cellID = `${cell.dataset.col}${cell.dataset.row}` 
+    cellID = `${col}${row}` 
     spreadsheetData.set(cellID,cell.textContent)
     console.log(`cell: ${cellID} value: ${spreadsheetData.get(cellID)}`);
 
