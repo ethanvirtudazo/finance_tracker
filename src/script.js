@@ -10,6 +10,8 @@ function getColumnLabel(index) {
 }
 
 const table = document.getElementById('spreadsheet');
+
+let alphabet;
     
 for (let i = 0; i < 50; i++) {
     const newRow = document.createElement('tr');
@@ -20,13 +22,15 @@ for (let i = 0; i < 50; i++) {
         if (i === 0 && j > 0) {
             const alphabet = getColumnLabel(j - 1)
             newCell.textContent = alphabet
-        } else if (j === 0 && i > 0) {            
-            newCell.textContent = i
         } else if (j === 0 && i === 0){
             newCell.textContent = "";
             newCell.setAttribute('contenteditable','false')
+        } else if (j === 0 && i > 0) {            
+            newCell.textContent = i        
         } else {
             newCell.textContent = "";
+            newCell.dataset.row = i
+            newCell.dataset.col = alphabet
             newCell.setAttribute('contenteditable','true')
         }
         newRow.appendChild(newCell);
