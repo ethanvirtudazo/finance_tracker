@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.body {
+    overflow: auto; /* Enable both horizontal and vertical scrolling */
+    border: 1px solid #ddd;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 95vw;
+    height: 100%;
+    overflow: auto;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 1200px; 
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {        
+    width: 60px;
+    height: 30px;
+    border: 1px solid #aaa;
+    text-align: center;
+    vertical-align: middle;      
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
