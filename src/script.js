@@ -22,11 +22,11 @@ function getColumnLabel(index) {
 
 const table = document.getElementById('spreadsheet');
     
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i <= 50; i++) {
     const newRow = document.createElement('tr');
     table.appendChild(newRow)
 
-    for (let j = 0; j < 50; j++) {
+    for (let j = 0; j <= 50; j++) {
 
         const newCell = document.createElement('td');
         const alphabet = j > 0 ? getColumnLabel(j - 1) : '';
@@ -50,6 +50,7 @@ for (let i = 0; i < 50; i++) {
 
             newCell.textContent = spreadsheetData.get(cellID);
         }
+        newRow.setAttribute('data-row', i);
         newRow.appendChild(newCell);
     }            
 }
