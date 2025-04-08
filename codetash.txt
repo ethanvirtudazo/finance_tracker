@@ -1,0 +1,12 @@
+
+if (data.startsWith('=SUM')) {
+                const inputValue = event.target.textContent
+                const values = inputValue.match(/[A-Z]+\d+/g);
+                if (values.length >= 2){
+                    const v1 = parseInt(spreadsheetData.get(values[0])) || 0;
+                    const v2 = parseInt(spreadsheetData.get(values[1])) || 0;
+                    const sum = v1 + v2;
+                    console.log(values[0],values[1],v1,v2,sum)
+                    cell.textContent = sum;
+                }
+        }

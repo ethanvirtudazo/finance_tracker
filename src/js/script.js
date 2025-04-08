@@ -66,8 +66,7 @@ export function addEventListeners() {
         const row = cell.dataset.row
         const col = cell.dataset.col    
         const cellID = `${col}${row}` 
-        spreadsheetData.set(cellID,cell.textContent)
-        console.log(`cell: ${cellID} value: ${spreadsheetData.get(cellID)}`);
+        spreadsheetData.set(cellID,cell.textContent)        
     
     })
     
@@ -78,5 +77,13 @@ export function addEventListeners() {
     
         localStorage.setItem("spreadsheetData", JSON.stringify([...spreadsheetData]));    
     })
-}    
 
+    table.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            const cell = event.target;
+            cell.blur();
+            // const cellID = `${cell.dataset.col}${cell.dataset.row}`
+            event.preventDefault();                     
+        }
+    }); 
+}    
