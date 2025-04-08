@@ -6,4 +6,5 @@ document.addEventListener('DOMContentLoaded', () => {
     createTable();
     addEventListeners();
     Formulas(); 
+    ifFormula();
 });
