@@ -1,4 +1,4 @@
-export const spreadsheetData = new Map();
+import { spreadsheetData, table } from "./data.js"
 
 export function manageData() {
     const savedData = localStorage.getItem('spreadsheetData');
@@ -51,32 +51,4 @@ export function createTable() {
         }
         table.appendChild(newRow)
     }    
-}
-
-export function addEventListeners() {
-    const table = document.getElementById('spreadsheet');
-
-    table.addEventListener("click" , (event) => {
-        const cell = event.target;
-        const row = cell.dataset.row
-        const col = cell.dataset.col
-        const cellID = `${col}${row}`
-        spreadsheetData.set(cellID,cell.textContent)
-    })
-    
-    table.addEventListener("input", (event) => {
-        const cell = event.target;
-        const cellID = `${cell.dataset.col}${cell.dataset.row}`
-        spreadsheetData.set(cellID,cell.textContent)    
-        localStorage.setItem("spreadsheetData", JSON.stringify([...spreadsheetData]));
-    })
-
-    table.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            const cell = event.target;
-            cell.blur();
-            // const cellID = `${cell.dataset.col}${cell.dataset.row}`
-            event.preventDefault();
-        }
-    }); 
 }
