@@ -32,6 +32,10 @@ table {
     table-layout: fixed;
 }
 
+td:nth-child(1), tr[data-row="0"] {
+    background-color: #e8e8e8;
+}
+
 td {        
     width: 60px;
     height: 30px;
